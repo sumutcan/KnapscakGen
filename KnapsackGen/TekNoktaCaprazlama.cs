@@ -11,9 +11,12 @@ namespace KnapsackGen
         {
             int[] k11 = new int[elemanSayisi];
             int[] k12 = new int[elemanSayisi];
-            int point = elemanSayisi / 3;
+
+            Random rnd = new Random();
+
+            int point = rnd.Next(k1.Genler.Count() - 3) + 1;
            
-             Kromozom[] yeniKromozomlar = new Kromozom[2];
+            Kromozom[] yeniKromozomlar = new Kromozom[2];
 
 
                 for (int i = 0; i < point; i++)
