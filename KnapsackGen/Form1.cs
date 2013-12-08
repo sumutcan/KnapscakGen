@@ -25,12 +25,22 @@ namespace KnapsackGen
             {
                 Knapsack.reset();
                 Knapsack.getInstance(Convert.ToInt32(txtElemanSayisi.Text), Convert.ToInt32(txtCantaKapasitesi.Text), cmbCaprazlamaYontemi.SelectedIndex);
-                Knapsack.getInstance().init();
 
-                lstElemanlar.Items.Clear();
+                for (int i = 0; i < lstElemanlar.Items.Count; i++ )
+                    Knapsack.getInstance().TumElemanlar[i] = Convert.ToInt32(lstElemanlar.Items[i]);
 
-                foreach (int i in Knapsack.getInstance().TumElemanlar)
-                    lstElemanlar.Items.Add(i);
+                if (lstElemanlar.Items.Count < Knapsack.getInstance().ElemanSayisi)
+                {
+                    Knapsack.getInstance().init();
+
+                    lstElemanlar.Items.Clear();
+
+                    foreach (int i in Knapsack.getInstance().TumElemanlar)
+                        lstElemanlar.Items.Add(i);
+                }
+                else
+                    Knapsack.getInstance().init(true);
+
 
                 txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();
                 lblFitness.Text = Knapsack.getInstance().MevcutCozum.Fitness.ToString();
@@ -55,6 +65,7 @@ namespace KnapsackGen
                 lblSuankiIterasyon.Text = sayac.ToString();
                 Application.DoEvents();
             }
+            MessageBox.Show(sayac.ToString());
             
         }
 

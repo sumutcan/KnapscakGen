@@ -8,6 +8,12 @@ namespace KnapsackGen
     public class Knapsack
     {
         private int elemanSayisi;
+
+        public int ElemanSayisi
+        {
+            get { return elemanSayisi; }
+            set { elemanSayisi = value; }
+        }
         private int kapasite;
 
         public int Kapasite
@@ -68,6 +74,11 @@ namespace KnapsackGen
                 tumElemanlar[i] = rnd.Next((kapasite*3)/4)+1;
 
             ilkJenerasyonOlustur();
+        }
+        public void init(bool ready)
+        {
+            if (ready)
+                ilkJenerasyonOlustur();
         }
 
         public void ilkJenerasyonOlustur()
