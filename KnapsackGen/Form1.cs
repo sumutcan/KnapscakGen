@@ -56,8 +56,9 @@ namespace KnapsackGen
         private void btnBaslat_Click(object sender, EventArgs e)
         {
             int sayac = 0;
-            while (Math.Abs(Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) >= Math.Abs(Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * Convert.ToInt32(txtBasariYuzdesi.Text)) / 100)) && sayac <= maksimumIterasyonSayisi)
+            while (Math.Abs(Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) > Math.Abs(Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * Convert.ToInt32(txtBasariYuzdesi.Text)) / 100)) && sayac <= maksimumIterasyonSayisi)
             {
+                
                 Knapsack.getInstance().solve();
                 txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();
                 lblFitness.Text = Knapsack.getInstance().MevcutCozum.Fitness.ToString();

@@ -14,7 +14,7 @@ namespace KnapsackGen
 
             Random rnd = new Random();
 
-            int point = rnd.Next(k1.Genler.Count() - 3) + 1;
+            int point = (rnd.Next(k1.Genler.Count() - 3) * DateTime.Now.Millisecond) % (k1.Genler.Count() - 3) + 1;
            
             Kromozom[] yeniKromozomlar = new Kromozom[2];
 
