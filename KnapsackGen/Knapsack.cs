@@ -136,5 +136,11 @@ namespace KnapsackGen
 
             yeniJenerasyonOlustur();
         }
+
+        public static void reset()
+        {
+
+            instance = null;
+        }
     }
 }

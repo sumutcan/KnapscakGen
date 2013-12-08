@@ -93,8 +93,8 @@ namespace KnapsackGen
 
                 int dc = ranks.Distinct().Count();
                 
-                if (dc > 1)
-                    ranks.RemoveAll(x => x.Genler.Equals(this.ranks[index].Genler));
+              
+                ranks.RemoveAll(x => x.Genler.Equals(this.ranks[index].Genler));
 
             }
 

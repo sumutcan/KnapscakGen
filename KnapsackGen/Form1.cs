@@ -23,6 +23,7 @@ namespace KnapsackGen
         {
             try
             {
+                Knapsack.reset();
                 Knapsack.getInstance(Convert.ToInt32(txtElemanSayisi.Text), Convert.ToInt32(txtCantaKapasitesi.Text), cmbCaprazlamaYontemi.SelectedIndex);
                 Knapsack.getInstance().init();
 
@@ -45,15 +46,39 @@ namespace KnapsackGen
         private void btnBaslat_Click(object sender, EventArgs e)
         {
             int sayac = 0;
-            while (Math.Abs(Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) >= Math.Abs(Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * Convert.ToInt32(txtBasariYuzdesi.Text)) / 100)) && sayac <= maksimımIterasyonSayisi)
+            while (Math.Abs(Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) >= Math.Abs(Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * Convert.ToInt32(txtBasariYuzdesi.Text)) / 100)) && sayac <= maksimumIterasyonSayisi)
             {
                 Knapsack.getInstance().solve();
                 txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();
                 lblFitness.Text = Knapsack.getInstance().MevcutCozum.Fitness.ToString();
                 sayac++;
+                lblSuankiIterasyon.Text = sayac.ToString();
                 Application.DoEvents();
             }
-            MessageBox.Show(sayac.ToString());
+            
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lstElemanlar.Items.Add(txtEleman.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            lstElemanlar.Items.Clear();
+ 
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            lstElemanlar.Items.RemoveAt(lstElemanlar.SelectedIndex);
         }
     }
 }

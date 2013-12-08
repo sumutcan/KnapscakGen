@@ -43,6 +43,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBasariYuzdesi = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEleman = new System.Windows.Forms.TextBox();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblSuankiIterasyon = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtEnIyiKromozom
@@ -119,10 +126,10 @@
             // lstElemanlar
             // 
             this.lstElemanlar.FormattingEnabled = true;
-            this.lstElemanlar.Location = new System.Drawing.Point(270, 118);
+            this.lstElemanlar.Location = new System.Drawing.Point(262, 144);
             this.lstElemanlar.MultiColumn = true;
             this.lstElemanlar.Name = "lstElemanlar";
-            this.lstElemanlar.Size = new System.Drawing.Size(565, 160);
+            this.lstElemanlar.Size = new System.Drawing.Size(573, 134);
             this.lstElemanlar.TabIndex = 8;
             // 
             // btnHazirla
@@ -178,11 +185,82 @@
             this.txtBasariYuzdesi.Size = new System.Drawing.Size(123, 20);
             this.txtBasariYuzdesi.TabIndex = 14;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(594, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Eleman:";
+            // 
+            // txtEleman
+            // 
+            this.txtEleman.Location = new System.Drawing.Point(643, 121);
+            this.txtEleman.Name = "txtEleman";
+            this.txtEleman.Size = new System.Drawing.Size(47, 20);
+            this.txtEleman.TabIndex = 16;
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.Location = new System.Drawing.Point(696, 119);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(41, 23);
+            this.btnEkle.TabIndex = 17;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.Location = new System.Drawing.Point(742, 119);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(34, 23);
+            this.btnSil.TabIndex = 18;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Location = new System.Drawing.Point(782, 119);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(53, 23);
+            this.btnTemizle.TabIndex = 19;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(118, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Şu anki İterasyon:";
+            // 
+            // lblSuankiIterasyon
+            // 
+            this.lblSuankiIterasyon.AutoSize = true;
+            this.lblSuankiIterasyon.Location = new System.Drawing.Point(209, 78);
+            this.lblSuankiIterasyon.Name = "lblSuankiIterasyon";
+            this.lblSuankiIterasyon.Size = new System.Drawing.Size(13, 13);
+            this.lblSuankiIterasyon.TabIndex = 21;
+            this.lblSuankiIterasyon.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 286);
+            this.Controls.Add(this.lblSuankiIterasyon);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnTemizle);
+            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnEkle);
+            this.Controls.Add(this.txtEleman);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBasariYuzdesi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtIterasyonSayisi);
@@ -199,7 +277,7 @@
             this.Controls.Add(this.lblFitness);
             this.Controls.Add(this.txtEnIyiKromozom);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Knapsack Genetik Algoritma";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +300,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBasariYuzdesi;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtEleman;
+        private System.Windows.Forms.Button btnEkle;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnTemizle;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblSuankiIterasyon;
     }
 }
 
