@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ICaprazlamaStratejisi.cs" />
+    <Compile Include="IkiNoktaCaprazlama.cs" />
     <Compile Include="Jenerasyon.cs" />
     <Compile Include="Knapsack.cs" />
     <Compile Include="Kromozom.cs" />

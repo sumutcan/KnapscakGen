@@ -15,16 +15,16 @@ namespace KnapsackGen
             int[] k11 = new int[kapasite];
             int[] k12 = new int[kapasite];
 
-            int pointOne = r.Next(kapasite -2);
+            int pointOne = Math.Abs((r.Next() * DateTime.Now.Millisecond) % kapasite);
 
             int pointTwo = pointOne;
 
             while (pointTwo == pointOne)
             {
-                pointTwo = r.Next(kapasite - 2);
+                pointTwo = Math.Abs((r.Next() * DateTime.Now.Millisecond) % kapasite);
             }
 
-            if(isBuyukSayi(pointOne, pointTwo))
+            if (isBuyukSayi(pointOne, pointTwo))
             {
                 int temp = pointOne;
                 pointOne = pointTwo;
@@ -45,7 +45,7 @@ namespace KnapsackGen
                 k11[i] = k2.Genler[i];
 
             }
-            for (int i = pointTwo; i < kapasite -1; i++)
+            for (int i = pointTwo; i < kapasite; i++)
             {
                 k11[i] = k2.Genler[i];
 
@@ -63,7 +63,7 @@ namespace KnapsackGen
                 k12[i] = k1.Genler[i];
 
             }
-            for (int i = pointTwo; i < kapasite - 1; i++)
+            for (int i = pointTwo; i < kapasite; i++)
             {
                 k12[i] = k1.Genler[i];
 
