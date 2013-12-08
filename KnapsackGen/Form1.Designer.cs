@@ -240,9 +240,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(118, 78);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 13);
+            this.label7.Size = new System.Drawing.Size(72, 13);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Şu anki İterasyon:";
+            this.label7.Text = "Şu anki Nesil:";
             // 
             // lblSuankiIterasyon
             // 
