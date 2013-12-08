@@ -58,7 +58,7 @@
             this.txtEnIyiKromozom.Multiline = true;
             this.txtEnIyiKromozom.Name = "txtEnIyiKromozom";
             this.txtEnIyiKromozom.Size = new System.Drawing.Size(823, 39);
-            this.txtEnIyiKromozom.TabIndex = 0;
+            this.txtEnIyiKromozom.TabIndex = 8;
             // 
             // lblFitness
             // 
@@ -101,14 +101,16 @@
             this.txtCantaKapasitesi.Location = new System.Drawing.Point(121, 136);
             this.txtCantaKapasitesi.Name = "txtCantaKapasitesi";
             this.txtCantaKapasitesi.Size = new System.Drawing.Size(123, 20);
-            this.txtCantaKapasitesi.TabIndex = 5;
+            this.txtCantaKapasitesi.TabIndex = 2;
+            this.txtCantaKapasitesi.Text = "100";
             // 
             // txtElemanSayisi
             // 
             this.txtElemanSayisi.Location = new System.Drawing.Point(121, 166);
             this.txtElemanSayisi.Name = "txtElemanSayisi";
             this.txtElemanSayisi.Size = new System.Drawing.Size(123, 20);
-            this.txtElemanSayisi.TabIndex = 6;
+            this.txtElemanSayisi.TabIndex = 3;
+            this.txtElemanSayisi.Text = "6";
             // 
             // cmbCaprazlamaYontemi
             // 
@@ -121,7 +123,7 @@
             this.cmbCaprazlamaYontemi.Location = new System.Drawing.Point(121, 226);
             this.cmbCaprazlamaYontemi.Name = "cmbCaprazlamaYontemi";
             this.cmbCaprazlamaYontemi.Size = new System.Drawing.Size(123, 21);
-            this.cmbCaprazlamaYontemi.TabIndex = 7;
+            this.cmbCaprazlamaYontemi.TabIndex = 5;
             // 
             // lstElemanlar
             // 
@@ -130,14 +132,14 @@
             this.lstElemanlar.MultiColumn = true;
             this.lstElemanlar.Name = "lstElemanlar";
             this.lstElemanlar.Size = new System.Drawing.Size(573, 134);
-            this.lstElemanlar.TabIndex = 8;
+            this.lstElemanlar.TabIndex = 9;
             // 
             // btnHazirla
             // 
             this.btnHazirla.Location = new System.Drawing.Point(9, 253);
             this.btnHazirla.Name = "btnHazirla";
             this.btnHazirla.Size = new System.Drawing.Size(75, 23);
-            this.btnHazirla.TabIndex = 9;
+            this.btnHazirla.TabIndex = 6;
             this.btnHazirla.Text = "Hazırla";
             this.btnHazirla.UseVisualStyleBackColor = true;
             this.btnHazirla.Click += new System.EventHandler(this.btnHazirla_Click);
@@ -148,7 +150,7 @@
             this.btnBaslat.Location = new System.Drawing.Point(175, 253);
             this.btnBaslat.Name = "btnBaslat";
             this.btnBaslat.Size = new System.Drawing.Size(69, 23);
-            this.btnBaslat.TabIndex = 10;
+            this.btnBaslat.TabIndex = 7;
             this.btnBaslat.Text = "Başlat";
             this.btnBaslat.UseVisualStyleBackColor = true;
             this.btnBaslat.Click += new System.EventHandler(this.btnBaslat_Click);
@@ -158,7 +160,8 @@
             this.txtIterasyonSayisi.Location = new System.Drawing.Point(121, 107);
             this.txtIterasyonSayisi.Name = "txtIterasyonSayisi";
             this.txtIterasyonSayisi.Size = new System.Drawing.Size(123, 20);
-            this.txtIterasyonSayisi.TabIndex = 12;
+            this.txtIterasyonSayisi.TabIndex = 1;
+            this.txtIterasyonSayisi.Text = "1000";
             // 
             // label4
             // 
@@ -183,7 +186,8 @@
             this.txtBasariYuzdesi.Location = new System.Drawing.Point(121, 193);
             this.txtBasariYuzdesi.Name = "txtBasariYuzdesi";
             this.txtBasariYuzdesi.Size = new System.Drawing.Size(123, 20);
-            this.txtBasariYuzdesi.TabIndex = 14;
+            this.txtBasariYuzdesi.TabIndex = 4;
+            this.txtBasariYuzdesi.Text = "99";
             // 
             // label6
             // 
