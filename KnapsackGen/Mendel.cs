@@ -14,6 +14,8 @@ namespace KnapsackGen
             {
                 case 0:
                     return new TekNoktaCaprazlama();
+                case 1:
+                    return new IkiNoktaCaprazlama();
                 default:
                     return null;
             }

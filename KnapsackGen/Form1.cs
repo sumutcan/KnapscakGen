@@ -17,7 +17,7 @@ namespace KnapsackGen
             InitializeComponent();
         }
 
-        int maksimımIterasyonSayisi;
+        int maksimumIterasyonSayisi;
 
         private void btnHazirla_Click(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace KnapsackGen
 
                 txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();
                 lblFitness.Text = Knapsack.getInstance().MevcutCozum.Fitness.ToString();
-                maksimımIterasyonSayisi = Convert.ToInt32(txtIterasyonSayisi.Text);
+                maksimumIterasyonSayisi = Convert.ToInt32(txtIterasyonSayisi.Text);
                 btnBaslat.Enabled = true;
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace KnapsackGen
         private void btnBaslat_Click(object sender, EventArgs e)
         {
             int sayac = 0;
-            while ((Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) <= Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * 99) / 100) || sayac <= maksimımIterasyonSayisi)
+            while ((Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) <= Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * 99) / 100) || sayac <= maksimumIterasyonSayisi)
             {
                 Knapsack.getInstance().solve();
                 txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();
