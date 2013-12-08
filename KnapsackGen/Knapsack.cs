@@ -86,7 +86,11 @@ namespace KnapsackGen
                         genHaritasi[j] = false;
 
                 }
-                simdikiJenerasyon.Kromozomlar.Add(new Kromozom(genHaritasi, tumElemanlar, kapasite));
+                Kromozom k = new Kromozom(genHaritasi, tumElemanlar, kapasite);
+                if (!simdikiJenerasyon.Kromozomlar.Contains(k))
+                    simdikiJenerasyon.Kromozomlar.Add(k);
+                else
+                    i--;
             }
 
             simdikiJenerasyon.eniyiKromozomBul(kapasite);

@@ -54,11 +54,11 @@ namespace KnapsackGen
         {
             List<Kromozom> sirali = kromozomlar.OrderByDescending(x => x.Fitness).ToList();
             ranks = new List<Kromozom>();
-            //int toplamFitness = sirali.Sum(x => x.Fitness);
+            int toplamFitness = sirali.Sum(x => x.Fitness);
             foreach (Kromozom k in sirali)
             {
-               // int limit = (int)(((double)k.Fitness / toplamFitness) * 100);
-                for (int i = 0; i < k.Fitness; i++)
+                int limit = 100-Math.Abs((int)(((double)(Knapsack.getInstance().Kapasite-k.Fitness) / toplamFitness) * 100));
+                for (int i = 0; i < limit; i++)
                     ranks.Add(k);
             }
 
@@ -90,8 +90,10 @@ namespace KnapsackGen
                 int index = rnd.Next(ranks.Count);
                 
                 ebeveynler[i] = this.ranks[index];
+
+                int dc = ranks.Distinct().Count();
                 
-                if (ranks.Count > 1)
+                if (dc > 1)
                     ranks.RemoveAll(x => x.Genler.Equals(this.ranks[index].Genler));
 
             }
@@ -106,7 +108,7 @@ namespace KnapsackGen
         {
             Random rnd = new Random();
             Random rnd2 = new Random();
-            if (rnd2.NextDouble() < 0.2)
+            if (rnd2.NextDouble() < 0.1)
             {
                 int index = rnd.Next(Kromozomlar.Count);
                 Random r = new Random();

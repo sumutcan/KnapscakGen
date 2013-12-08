@@ -34,7 +34,7 @@ namespace KnapsackGen
         private void btnBaslat_Click(object sender, EventArgs e)
         {
             int sayac = 0;
-            while (Knapsack.getInstance().MevcutCozum.Fitness <= (Knapsack.getInstance().Kapasite * 99) / 100)
+            while ((Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) <= Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * 99) / 100))
             {
                 Knapsack.getInstance().solve();
                 txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();

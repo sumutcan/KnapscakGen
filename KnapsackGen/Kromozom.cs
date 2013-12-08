@@ -34,8 +34,8 @@ namespace KnapsackGen
                 else
                     genler[i] = 0;
             }
-
-            gecersizSonuclariYokEt(genler);
+            fitnessHesapla();
+ //           gecersizSonuclariYokEt(genler);
 
 
         }
@@ -49,8 +49,8 @@ namespace KnapsackGen
         {
             // TODO: Complete member initialization
             this.genler = genler;
-
-            gecersizSonuclariYokEt(genler);
+            fitnessHesapla();
+//            gecersizSonuclariYokEt(genler);
 
         }
 
@@ -83,6 +83,13 @@ namespace KnapsackGen
                 str += i + " ";
             
             return str;
+        }
+        public override bool Equals(object obj)
+        {
+            if (this.genler.Equals(((Kromozom)obj).genler))
+                return true;
+            else
+                return false;
         }
     }
 }
