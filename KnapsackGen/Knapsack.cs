@@ -49,7 +49,6 @@ namespace KnapsackGen
             caprazlamaStratejisi = Mendel.caprazlamaStratejisiUret(strateji);
             mevcutCozum = new Kromozom();
             mevcutCozum.Fitness = kapasite;
-           
         }
 
         public static Knapsack getInstance(int elemanSayisi, int kapasite, int strateji)
