@@ -41,6 +41,8 @@
             this.btnBaslat = new System.Windows.Forms.Button();
             this.txtIterasyonSayisi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtBasariYuzdesi = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtEnIyiKromozom
@@ -81,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 204);
+            this.label3.Location = new System.Drawing.Point(9, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 4;
@@ -109,7 +111,7 @@
             "Tek noktalı çaprazlama",
             "İki noktalı çaprazlama",
             "Birleşik çaprazlama"});
-            this.cmbCaprazlamaYontemi.Location = new System.Drawing.Point(121, 201);
+            this.cmbCaprazlamaYontemi.Location = new System.Drawing.Point(121, 226);
             this.cmbCaprazlamaYontemi.Name = "cmbCaprazlamaYontemi";
             this.cmbCaprazlamaYontemi.Size = new System.Drawing.Size(123, 21);
             this.cmbCaprazlamaYontemi.TabIndex = 7;
@@ -125,7 +127,7 @@
             // 
             // btnHazirla
             // 
-            this.btnHazirla.Location = new System.Drawing.Point(9, 228);
+            this.btnHazirla.Location = new System.Drawing.Point(9, 253);
             this.btnHazirla.Name = "btnHazirla";
             this.btnHazirla.Size = new System.Drawing.Size(75, 23);
             this.btnHazirla.TabIndex = 9;
@@ -136,7 +138,7 @@
             // btnBaslat
             // 
             this.btnBaslat.Enabled = false;
-            this.btnBaslat.Location = new System.Drawing.Point(175, 228);
+            this.btnBaslat.Location = new System.Drawing.Point(175, 253);
             this.btnBaslat.Name = "btnBaslat";
             this.btnBaslat.Size = new System.Drawing.Size(69, 23);
             this.btnBaslat.TabIndex = 10;
@@ -160,11 +162,29 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Maks. İterasyon Say:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Başarı Yüzdesi:";
+            // 
+            // txtBasariYuzdesi
+            // 
+            this.txtBasariYuzdesi.Location = new System.Drawing.Point(121, 193);
+            this.txtBasariYuzdesi.Name = "txtBasariYuzdesi";
+            this.txtBasariYuzdesi.Size = new System.Drawing.Size(123, 20);
+            this.txtBasariYuzdesi.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 286);
+            this.Controls.Add(this.txtBasariYuzdesi);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtIterasyonSayisi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBaslat);
@@ -200,6 +220,8 @@
         private System.Windows.Forms.Button btnBaslat;
         private System.Windows.Forms.TextBox txtIterasyonSayisi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBasariYuzdesi;
     }
 }
 
