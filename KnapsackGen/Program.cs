@@ -10,8 +10,6 @@ namespace KnapsackGen
         /// <summary>
         /// The main entry polong for the application.
         /// </summary>
-        public static int kapasite;
-        public static int[] tumElemanlar;
         [STAThread]
         static void Main()
         {

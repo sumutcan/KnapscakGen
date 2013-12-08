@@ -110,10 +110,10 @@ namespace KnapsackGen
             {
                 int index = rnd.Next(Kromozomlar.Count);
                 Random r = new Random();
-                int genIndex = r.Next(Program.tumElemanlar.Count());
+                int genIndex = r.Next(Knapsack.getInstance().TumElemanlar.Count());
                 
                 if (Kromozomlar[index].Genler[genIndex] == 0)
-                    Kromozomlar[index].Genler[genIndex] = Program.tumElemanlar[genIndex];
+                    Kromozomlar[index].Genler[genIndex] = Knapsack.getInstance().TumElemanlar[genIndex];
                 
                     
                 

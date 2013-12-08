@@ -25,6 +25,7 @@ namespace KnapsackGen
         }
         private Jenerasyon simdikiJenerasyon;
         private ICaprazlamaStratejisi caprazlamaStratejisi;
+        private static Knapsack instance = null;
 
         public int[] TumElemanlar
         {
@@ -32,8 +33,9 @@ namespace KnapsackGen
             set { tumElemanlar = value; }
         }
 
-        public Knapsack(int elemanSayisi, int kapasite, int strateji)
-        {
+
+        private Knapsack(int elemanSayisi, int kapasite, int strateji)
+        { 
             this.elemanSayisi = elemanSayisi;
             this.kapasite = kapasite;
             tumElemanlar = new int[elemanSayisi];
@@ -41,8 +43,20 @@ namespace KnapsackGen
             caprazlamaStratejisi = Mendel.caprazlamaStratejisiUret(strateji);
             mevcutCozum = new Kromozom();
             mevcutCozum.Fitness = kapasite;
-            Program.kapasite = kapasite;
+           
+        }
 
+        public static Knapsack getInstance(int elemanSayisi, int kapasite, int strateji)
+        {
+            if (instance == null)
+                instance = new Knapsack(elemanSayisi, kapasite, strateji);
+
+            return instance;
+        }
+
+        public static Knapsack getInstance()
+        {
+            return instance;
         }
 
         public void init()

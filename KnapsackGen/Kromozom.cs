@@ -26,7 +26,7 @@ namespace KnapsackGen
         public Kromozom(bool[] genHaritasi, int[] tumElemanlar, int kapasite)
         {
             genler = new int[genHaritasi.Length];
-            Program.tumElemanlar = tumElemanlar;
+            
             for (int i = 0; i < genHaritasi.Length; i++)
             {
                 if (genHaritasi[i])
@@ -35,19 +35,7 @@ namespace KnapsackGen
                     genler[i] = 0;
             }
 
-            Random rnd = new Random();
-            do
-            {
-                fitnessHesapla();
-
-                if (fitness > kapasite)
-                {
-                    int a = rnd.Next(genler.Length);
-                    if (genler[a] > 0)
-                        genler[a] = 0;
-                }
-
-            } while (fitness > kapasite);
+            gecersizSonuclariYokEt(genler);
 
 
         }
@@ -62,20 +50,25 @@ namespace KnapsackGen
             // TODO: Complete member initialization
             this.genler = genler;
 
+            gecersizSonuclariYokEt(genler);
+
+        }
+
+        private void gecersizSonuclariYokEt(int[] genler)
+        {
             Random rnd = new Random();
             do
             {
                 fitnessHesapla();
 
-                if (fitness > Program.kapasite)
+                if (fitness > Knapsack.getInstance().Kapasite)
                 {
                     int a = rnd.Next(genler.Length);
                     if (genler[a] > 0)
                         genler[a] = 0;
                 }
 
-            } while (fitness > Program.kapasite);
-
+            } while (fitness > Knapsack.getInstance().Kapasite);
         }
 
         private void fitnessHesapla()
