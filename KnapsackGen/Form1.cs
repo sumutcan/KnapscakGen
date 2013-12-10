@@ -6,11 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace KnapsackGen
 {
     public partial class Form1 : Form
     {
+        int sayac = 0;
+        bool done = false;
+        string fitness = "0";
+        string enIyi = string.Empty;
 
         public Form1()
         {
@@ -18,6 +23,7 @@ namespace KnapsackGen
         }
 
         int maksimumIterasyonSayisi;
+        private int basariYuzdesi;
 
         private void btnHazirla_Click(object sender, EventArgs e)
         {
@@ -41,7 +47,7 @@ namespace KnapsackGen
                 else
                     Knapsack.getInstance().init(true);
 
-
+                basariYuzdesi = Convert.ToInt32(txtBasariYuzdesi.Text);
                 txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();
                 lblFitness.Text = Knapsack.getInstance().MevcutCozum.Fitness.ToString();
                 maksimumIterasyonSayisi = Convert.ToInt32(txtIterasyonSayisi.Text);
@@ -55,18 +61,43 @@ namespace KnapsackGen
 
         private void btnBaslat_Click(object sender, EventArgs e)
         {
-            int sayac = 0;
-            while (Math.Abs(Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) > Math.Abs(Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * Convert.ToInt32(txtBasariYuzdesi.Text)) / 100)) && sayac <= maksimumIterasyonSayisi)
+            
+            Thread t = new Thread(new ThreadStart(Solve));
+            t.Start();
+            btnBaslat.Enabled = false;
+            btnHazirla.Enabled = false;
+            
+
+            while (!done)
             {
-                
-                Knapsack.getInstance().solve();
-                txtEnIyiKromozom.Text = Knapsack.getInstance().MevcutCozum.ToString();
-                lblFitness.Text = Knapsack.getInstance().MevcutCozum.Fitness.ToString();
-                sayac++;
+                //t.Join(1000);
                 lblSuankiIterasyon.Text = sayac.ToString();
+                txtEnIyiKromozom.Text = enIyi;
+                lblFitness.Text = fitness;
                 Application.DoEvents();
             }
-            MessageBox.Show(sayac.ToString());
+            lblSuankiIterasyon.Text = sayac.ToString();
+            txtEnIyiKromozom.Text = enIyi;
+            lblFitness.Text = fitness;
+            Application.DoEvents();
+            btnHazirla.Enabled = true;
+            done = false;
+            sayac = 0;
+        }
+
+        private void Solve()
+        {
+           
+            while (Math.Abs(Knapsack.getInstance().Kapasite - Knapsack.getInstance().MevcutCozum.Fitness) > Math.Abs(Knapsack.getInstance().Kapasite - ((Knapsack.getInstance().Kapasite * Convert.ToInt32(basariYuzdesi)) / 100)) && sayac <= maksimumIterasyonSayisi)
+            {
+
+                Knapsack.getInstance().solve();
+                enIyi = Knapsack.getInstance().MevcutCozum.ToString();
+                fitness = Knapsack.getInstance().MevcutCozum.Fitness.ToString();
+                sayac++;
+
+            }
+            done = true;
             
         }
 

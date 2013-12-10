@@ -8,7 +8,7 @@ namespace KnapsackGen
     public class Knapsack
     {
         private int elemanSayisi;
-
+        private static object obj = new object();
         public int ElemanSayisi
         {
             get { return elemanSayisi; }
@@ -53,15 +53,20 @@ namespace KnapsackGen
 
         public static Knapsack getInstance(int elemanSayisi, int kapasite, int strateji)
         {
-            if (instance == null)
+            lock (obj)
+            {
                 instance = new Knapsack(elemanSayisi, kapasite, strateji);
+            }
 
             return instance;
         }
 
         public static Knapsack getInstance()
         {
-            return instance;
+            lock (obj)
+            {
+                return instance;
+            }
         }
 
         public void init()
